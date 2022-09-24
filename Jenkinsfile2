@@ -34,8 +34,7 @@ pipeline{
             }
             agent {
                 docker { 
-                    image 'amazon/aws-cli' 
-                    args '-v ~/.aws:/root/.aws'
+                    image 'garland/aws-cli-docker' 
                 }
             }
             steps{
