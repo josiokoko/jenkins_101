@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         AppHome = "app 3.6.0"
+        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
 
     stages{
@@ -15,6 +17,7 @@ pipeline {
             steps{
                 sh 'printenv'
                 echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
+                sh "aws sts get-caller-identity"
             }
         }
 
