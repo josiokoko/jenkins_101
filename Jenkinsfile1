@@ -1,10 +1,19 @@
 pipeline {
     agent any
 
+    environment {
+        AppHome = "app 3.6.0"
+    }
+
     stages{
 
         stage('Pipeline Env Variable'){
+
+            environment {
+                DEBUG_FLAG = "-g"
+            }
             steps{
+                sh 'printenv'
                 echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
             }
         }
