@@ -7,6 +7,10 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
     }
 
+    parameters {
+        string(name: 'STATEMENT', defaultValue: 'hello; ls /', description: 'What should I say?')
+    }
+
     stages{
 
         stage('Pipeline Env Variable'){
@@ -15,7 +19,7 @@ pipeline {
                 DEBUG_FLAG = "-g"
             }
             steps{
-                sh "yum install awscli"
+                sh 'echo ${STATEMENT}'
                 sh 'printenv'
                 echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
                 sh "aws sts get-caller-identity"
