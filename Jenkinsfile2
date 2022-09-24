@@ -11,5 +11,19 @@ pipeline{
             }
         }
 
+<<<<<<< HEAD
+=======
+
+        stage("Gradle"){
+            agent {
+                docker { image 'gradle:6.7-jdk11' }
+            }
+            steps{
+                sh 'gradle --version'
+            }
+        }
+        
+        
+>>>>>>> feature/docker_pipeline
     }
 }
