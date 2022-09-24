@@ -38,6 +38,7 @@ pipeline{
                 }
             }
             steps{
+                sh 'snap install kubectl --classic'
                 sh 'aws --version'
                 sh 'aws sts get-caller-identity'
                 sh 'aws s3 ls'
