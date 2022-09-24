@@ -11,8 +11,6 @@ pipeline{
             }
         }
 
-<<<<<<< HEAD
-=======
 
         stage("Gradle"){
             agent {
@@ -24,6 +22,5 @@ pipeline{
         }
         
         
->>>>>>> feature/docker_pipeline
     }
 }
