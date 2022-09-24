@@ -22,7 +22,6 @@ pipeline {
                 sh 'echo ${STATEMENT}'
                 sh 'printenv'
                 echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
-                sh "aws sts get-caller-identity"
             }
         }
 
