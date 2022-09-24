@@ -15,7 +15,7 @@ pipeline {
                 DEBUG_FLAG = "-g"
             }
             steps{
-                sh "sudo yum install awscli"
+                sh "yum install awscli"
                 sh 'printenv'
                 echo "Running ${env.BUILD_ID} on ${JENKINS_URL}"
                 sh "aws sts get-caller-identity"
